@@ -1,0 +1,133 @@
+/* ==== Reset & base ==== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root{
+  --bg: #f7fafc;
+  --fg: #1f2937;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --primary:#2563eb;
+  --shadow: 0 4px 18px rgba(0,0,0,.08);
+  --radius: 12px;
+}
+
+html { font-size: 16px; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* ==== Header ==== */
+header{
+  padding: 2.5rem 1rem 3rem;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #111827, #1f2937 60%, #0ea5e9);
+}
+header h1{
+  margin: .75rem 0 0;
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 2.25rem);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+header img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,.6);
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+
+/* ==== Layout principal ==== */
+main{
+  max-width: 960px;
+  margin: -2rem auto 2rem; /* levanta las tarjetas debajo del header */
+  padding: 0 1rem 1rem;
+}
+section{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  margin: 1rem 0;
+}
+h2{
+  margin: 0 0 .75rem;
+  font-size: 1.25rem;
+}
+
+/* ==== Tipografía y listas ==== */
+p{ margin: 0 0 .75rem; }
+ul{
+  margin: 0;
+  padding: 0 0 0 1.1rem;
+}
+ul li{
+  margin: .35rem 0;
+}
+
+/* ==== Formulario ==== */
+form{
+  display: grid;
+  gap: .9rem;
+}
+label{
+  font-weight: 600;
+  font-size: .95rem;
+}
+input, textarea, button{
+  width: 100%;
+  padding: .75rem .85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+input:focus, textarea:focus{
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+textarea{ resize: vertical; min-height: 120px; }
+
+button{
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s ease, filter .15s ease;
+}
+button:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+button:active{ transform: translateY(0); }
+
+/* ==== Footer ==== */
+footer{
+  text-align: center;
+  color: var(--muted);
+  padding: 1.25rem 1rem 2rem;
+  font-size: .95rem;
+}
+
+/* ==== Responsive ==== */
+@media (min-width: 720px){
+  /* Formulario en dos columnas; mensaje y botón a todo el ancho */
+  form{
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Si tienes <br> en el HTML, puedes quitarlos para que esto se vea perfecto */
+  #nombre, #email{ grid-column: span 1; }
+  #mensaje{ grid-column: 1 / -1; }
+  button{
+    grid-column: 1 / -1;
+    width: auto;
+    justify-self: start;
+    padding: .8rem 1.25rem;
+  }
+}

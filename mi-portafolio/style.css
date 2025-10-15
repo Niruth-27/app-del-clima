@@ -1,0 +1,70 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fafafa;
+  color:#222;
+  line-height:1.6;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#111;
+  color:white;
+  position:sticky;
+  top:0;
+}
+header nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+#hero{
+  text-align:center;
+  padding:100px 20px;
+  background:linear-gradient(135deg,#4b6cb7,#182848);
+  color:white;
+}
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  background:white;
+  color:#182848;
+  padding:10px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:transform .3s;
+}
+.btn:hover{transform:scale(1.05);}
+section{padding:60px 20px;text-align:center;}
+.skills,.proyectos-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  margin-top:20px;
+}
+.skills div,.proyecto{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+/* Responsive */
+@media(max-width:900px){
+  header{flex-direction:column;}
+  .skills,.proyectos-grid{flex-direction:column;}
+}
+
+html {
+  scroll-behavior: smooth;
+}
