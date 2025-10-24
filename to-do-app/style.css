@@ -1,0 +1,141 @@
+body {
+  background: linear-gradient(135deg, #74ABE2, #5563DE);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.todo-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+  border-color: #5563DE;
+}
+
+#addBtn {
+  background: #5563DE;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#addBtn:hover {
+  background: #4050b5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #e33b3b;
+}
+
+/* --- EFECTOS VISUALES --- */
+li {
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  background: #e6e6e6;
+  transform: scale(1.02);
+}
+
+li.completed {
+  background: #d9ffd9;
+  color: #333;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+li {
+  animation: fadeIn 0.3s ease;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .todo-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #addBtn {
+    padding: 8px 12px;
+  }
+
+  li {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}
+
+
